@@ -39,7 +39,7 @@ userRouter.patch('/', authorizationMiddleware(['admin']), async (req: Request, r
     
     let {userId, username, password, firstName, lastName, email, role} = req.body
     if(userId){
-        let newUser: (string|number|undefined|Role)[] = [userId, username, password, firstName, lastName, email, role.roleId]
+        let newUser: (string|number|undefined|Role)[] = [userId, username, password, firstName, lastName, email, role&&role.roleId]
         console.log(newUser);
         
         try{            
